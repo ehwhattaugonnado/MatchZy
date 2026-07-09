@@ -1,17 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <!-- Directory holding the custom CounterStrikeSharp API assemblies
+         (https://github.com/ehwhattaugonnado/CounterStrikeSharp/releases/tag/v1.0.370-custom.1).
+         Override with -p:CssApiDir=/path/to/publish -->
+    <CssApiDir Condition="'$(CssApiDir)' == ''">$(MSBuildThisFileDirectory)cssharp-api</CssApiDir>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.342">
-        <PrivateAssets>none</PrivateAssets>
-        <ExcludeAssets>runtime</ExcludeAssets>
-        <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <!-- Compile against the custom CounterStrikeSharp build instead of the NuGet package.
+         Private=false mirrors the old ExcludeAssets=runtime: the server supplies these at runtime. -->
+    <Reference Include="CounterStrikeSharp.API">
+      <HintPath>$(CssApiDir)/CounterStrikeSharp.API.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions">
+      <HintPath>$(CssApiDir)/Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>$(CssApiDir)/Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <PackageReference Include="CsvHelper" Version="30.0.1" />
     <PackageReference Include="Dapper" Version="2.1.15" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.13" />
