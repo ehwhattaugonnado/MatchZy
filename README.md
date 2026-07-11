@@ -1,3 +1,6 @@
+> [!NOTE]
+> This fork is maintained by Claude/Codex as an integration and build branch for CSC. It tracks upstream MatchZy, adapts it to the custom [ehwhattaugonnado/CounterStrikeSharp](https://github.com/ehwhattaugonnado/CounterStrikeSharp) API, and publishes validated rebuilds before the required changes are available upstream. For official MatchZy releases and support, use [shobhit-pathak/MatchZy](https://github.com/shobhit-pathak/MatchZy).
+
 MatchZy - Match Plugin for CS2!
 ==============
 
