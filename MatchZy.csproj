@@ -4,8 +4,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!-- Directory holding the custom CounterStrikeSharp API assemblies
-         (https://github.com/ehwhattaugonnado/CounterStrikeSharp/releases/tag/v1.0.370-custom.1).
+    <!-- Directory holding the custom CounterStrikeSharp API assemblies from
+         build 1.0.371-16 (commit 2ca60003, GitHub Actions run 29164204856).
          Override with -p:CssApiDir=/path/to/publish -->
     <CssApiDir Condition="'$(CssApiDir)' == ''">$(MSBuildThisFileDirectory)cssharp-api</CssApiDir>
   </PropertyGroup>
