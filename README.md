@@ -1,7 +1,7 @@
 > [!NOTE]
 > This fork keeps [upstream MatchZy](https://github.com/shobhit-pathak/MatchZy) usable. `main` contains only demo and round-backup path fixes and compatibility updates for official CounterStrikeSharp API 1.0.376; it adds no features. The path fixes are proposed in [upstream PR #411](https://github.com/shobhit-pathak/MatchZy/pull/411). `dev` also carries opt-in scoreboard clan tag fixes, disabled by default, adapted from [upstream PR #407](https://github.com/shobhit-pathak/MatchZy/pull/407).
 >
-> CSC-specific features and server changes belong in the separate [CSC fork](https://github.com/csconfederation/MatchZy). Claude Code assisted with the original path fixes; Codex combined them, updated API compatibility, and verified the builds. Maintainers are responsible for review and releases.
+> CSC-specific features and server changes belong in the separate [CSC fork](https://github.com/csconfederation/MatchZy). Claude Code assisted with the original path fixes. Codex combined those fixes, updated API compatibility, adapted iagogfe's clan tag patch for this fork, updated CI, and verified the builds. Maintainers are responsible for review and releases.
 
 MatchZy - Match Plugin for CS2!
 ==============
