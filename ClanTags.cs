@@ -43,8 +43,8 @@ public partial class MatchZy
         if (!isMatchLive) return "";
 
         string steamId = player.SteamID.ToString();
-        if (FindPlayer(matchzyTeam1.teamPlayers, steamId) != null) return matchzyTeam1.teamTag;
-        if (FindPlayer(matchzyTeam2.teamPlayers, steamId) != null) return matchzyTeam2.teamTag;
+        if (matchzyTeam1.teamPlayers?[steamId] != null) return matchzyTeam1.teamTag;
+        if (matchzyTeam2.teamPlayers?[steamId] != null) return matchzyTeam2.teamTag;
 
         string side = player.TeamNum == 3 ? "CT" : "TERRORIST";
         return reverseTeamSides.TryGetValue(side, out Team? team) ? team.teamTag : "";
