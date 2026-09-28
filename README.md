@@ -1,5 +1,7 @@
 > [!NOTE]
-> This fork is maintained by Claude/Codex as an integration and build branch for CSC. It tracks upstream MatchZy, adapts it to the custom [ehwhattaugonnado/CounterStrikeSharp](https://github.com/ehwhattaugonnado/CounterStrikeSharp) API, and publishes validated rebuilds before the required changes are available upstream. For official MatchZy releases and support, use [shobhit-pathak/MatchZy](https://github.com/shobhit-pathak/MatchZy).
+> This is a minimal maintenance fork of [upstream MatchZy](https://github.com/shobhit-pathak/MatchZy). It carries fixes for demo and round-backup file paths and builds against official CounterStrikeSharp API 1.0.376. It does not add features. See the [upstream path-fix PR](https://github.com/shobhit-pathak/MatchZy/pull/411).
+>
+> CSC-specific features and server changes belong in the separate [CSC fork](https://github.com/csconfederation/MatchZy). The original path fixes were developed with Claude Code assistance; Codex combined them, updated the build dependency, and checked the build. Maintainers are responsible for review and releases.
 
 MatchZy - Match Plugin for CS2!
 ==============
