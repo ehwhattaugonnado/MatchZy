@@ -26,7 +26,7 @@ public partial class MatchZy
     {
         if (!clanTagsEnabled.Value || player is not { IsValid: true, IsBot: false, IsHLTV: false }) return;
         if (matchzyTeam1.coach.Contains(player) || matchzyTeam2.coach.Contains(player)) return;
-        if (player.TeamNum is not (2 or 3) && player.Clan is not ("[Ready]" or "[Unready]")
+        if (player.TeamNum is not (2 or 3) && player.Clan is not ("Ready" or "Unready")
             && player.Clan != matchzyTeam1.teamTag && player.Clan != matchzyTeam2.teamTag) return;
 
         string clanTag = player.TeamNum is 2 or 3 ? CurrentClanTag(player) : "";
@@ -43,7 +43,7 @@ public partial class MatchZy
             // In join ready mode nobody types .ready, so there is no ready status to show.
             if (IsJoinReadyMode()) return "";
             return player.UserId is int userId && playerReadyStatus.GetValueOrDefault(userId)
-                ? "[Ready]" : "[Unready]";
+                ? "Ready" : "Unready";
         }
 
         if (!isMatchLive) return "";
