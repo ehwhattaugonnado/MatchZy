@@ -39,8 +39,12 @@ public partial class MatchZy
     private string CurrentClanTag(CCSPlayerController player)
     {
         if (readyAvailable && !matchStarted)
+        {
+            // In join ready mode nobody types .ready, so there is no ready status to show.
+            if (IsJoinReadyMode()) return "";
             return player.UserId is int userId && playerReadyStatus.GetValueOrDefault(userId)
                 ? "[Ready]" : "[Unready]";
+        }
 
         if (!isMatchLive) return "";
 
